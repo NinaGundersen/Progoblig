@@ -13,7 +13,7 @@ end
 #Fikset tabellen med bruk av sanitize funksjonen
 
 #New sanitized tabell
-print(kWh-wealthy-consumer-data)
+kWh-wealthy-consumer-data
 
 #Funksjon for å gjøre string til tall i kolonnen "energi"
 fun energi-to-number(str :: String) -> Number:
@@ -30,7 +30,7 @@ end
 #Ny tabell med tall
 transformed-table = transform-column(kWh-wealthy-consumer-data, "energi", energi-to-number)
 
-print(transformed-table)
+transformed-table
 
 #funksjon for å beregne energiforbruket for bilbruk
 fun car-energi-per-day(distance-travelled-per-day, distance-per-unit-of-fuel, energy-per-unit-of-fuel):
@@ -68,7 +68,7 @@ end
 #Ny tabell med energiforbruk for bil
 transformed-table-with-car = transform-column(kWh-wealthy-consumer-data, "energi", energi-to-number-with-car)
 
-print(transformed-table-with-car)
+transformed-table-with-car
 
 #Ny visualisering med den korrekte energiforbuket for bil
 bar-chart(transformed-table-with-car, "komponent", "energi")
